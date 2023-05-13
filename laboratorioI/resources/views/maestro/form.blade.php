@@ -11,34 +11,34 @@
     <div class="container">
 
         <div class="form-group"> 
-            <label  for="Codigo">Codigo Del Alumno</label>
-            <input class="form-control" type="text" name="Codigo" id="Codigo" value="{{ isset($alumno)?$alumno->Codigo:'' }}" required>
+            <label  for="MCodigo">Codigo Del Maestro</label>
+            <input class="form-control" type="text" name="MCodigo" id="MCodigo" value="{{ isset($maestro)?$maestro->MCodigo:'' }}" required>
         </div>
         <br>
 
         <div class="form-group">  
-            <label for="Nombre">Nombre Del Alumno</label>
-            <input class="form-control" type="text" name="Nombre" id="Nombre" value="{{ isset($alumno)?$alumno->Nombre:'' }}" required>    
+            <label for="MNombre">Nombre Del maestro</label>
+            <input class="form-control" type="text" name="MNombre" id="MNombre" value="{{ isset($maestro)?$maestro->MNombre:'' }}" required>    
         </div>
         <br>
        
         <div class="form-group"> 
-            <label for="Apellido">Apellido Del Alumno</label>
-            <input class="form-control" type="text" name="Apellido" id="Apellido" value="{{ isset($alumno)?$alumno->Apellido:'' }}" required>
+            <label for="MApellido">Apellido Del maestro</label>
+            <input class="form-control" type="text" name="MApellido" id="MApellido" value="{{ isset($maestro)?$maestro->MApellido:'' }}" required>
     
         </div>
         <br>
      
         <div class="form-group">  
-            <label for="Correo">Correo Del Alumno</label>
-            <input class="form-control" type="text" name="Correo" id="Correo" value="{{ isset($alumno)?$alumno->Correo:'' }}" required>
+            <label for="MCorreo">Correo Del maestro</label>
+            <input class="form-control" type="text" name="MCorreo" id="MCorreo" value="{{ isset($maestro)?$maestro->MCorreo:'' }}" required>
     
         </div>
         <br>
 
        
         <div class="form-group">
-            <a class="btn btn-secondary" href="{{ url('alumno') }}">Volver</a>
+            <a class="btn btn-secondary" href="{{ url('maestro') }}">Volver</a>
             <button class="btn btn-primary" type="submit">Guardar</button>
         </div>
        

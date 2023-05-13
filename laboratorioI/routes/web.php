@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\MaestroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('alumno', AlumnoController::class);
+Route::resource('maestro', MaestroController::class);

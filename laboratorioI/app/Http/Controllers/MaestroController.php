@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alumno;
+use App\Models\Maestro;
 use Illuminate\Http\Request;
 
-class AlumnoController extends Controller
+class MaestroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class AlumnoController extends Controller
     public function index()
     {
         //
-        $data['alumnos'] = Alumno::All();
-        return view('alumno.index', $data);
+        $data['maestros'] = Maestro::All();
+        return view('maestro.index', $data);
     }
 
     /**
@@ -23,8 +23,7 @@ class AlumnoController extends Controller
     public function create()
     {
         //
-        return view('alumno.create');
-
+        return view('maestro.create');
     }
 
     /**
@@ -33,16 +32,16 @@ class AlumnoController extends Controller
     public function store(Request $request)
     {
         //
-        $alumnoDato = request()->except('_token');
-        Alumno::insert($alumnoDato);
-        return redirect()->route('alumno.index');
+        $maestroDato = request()->except('_token');
+        Maestro::insert($maestroDato);
+        return redirect()->route('maestro.index');
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Alumno $alumno)
+    public function show(Maestro $maestro)
     {
         //
     }
@@ -53,8 +52,8 @@ class AlumnoController extends Controller
     public function edit(string $id)
     {
         //
-        $alumno = Alumno::findOrFail($id);
-        return view('alumno.edit', compact('alumno'));
+        $maestro = Maestro::findOrFail($id);
+        return view('maestro.edit', compact('maestro'));
 
     }
 
@@ -64,10 +63,9 @@ class AlumnoController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $alumnoDato = request()->except('_token', '_method');
-        Alumno::where('id', '=', $id)->update($alumnoDato);
-        return redirect('alumno');
-
+        $maestroDato = request()->except('_token', '_method');
+        Maestro::where('id', '=', $id)->update($maestroDato);
+        return redirect('maestro');
     }
 
     /**
@@ -76,7 +74,7 @@ class AlumnoController extends Controller
     public function destroy(string $id)
     {
         //
-        Alumno::destroy($id);
-        return redirect('alumno');
+        Maestro::destroy($id);
+        return redirect('maestro');
     }
 }
